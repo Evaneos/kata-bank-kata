@@ -1,0 +1,25 @@
+{
+    "autoload": {
+        "psr-4": {
+            "KataBank\\" : "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\KataBank\\": "tests"
+        }
+    },
+    "config": {
+        "bin-dir": "bin/",
+        "platform": {
+            "php": "5.5.30"
+        }
+    },
+    "require": {
+
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.5",
+        "henrikbjorn/phpspec-code-coverage": "^2.0"
+    }
+}

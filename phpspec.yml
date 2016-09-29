@@ -1,0 +1,15 @@
+suites:
+    default:
+        namespace: KataBank
+        spec_path: %paths.config%/tests/
+        psr4_prefix: KataBank
+
+extensions:
+#    - PhpSpec\Extension\CodeCoverageExtension
+
+code_coverage:
+    format:
+        - html
+    output:
+        html: tests/output/
+
