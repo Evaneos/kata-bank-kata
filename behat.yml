@@ -1,0 +1,5 @@
+default:
+    suites:
+        bank:
+            paths:    [ %paths.base%/features/bank.feature ]
+            contexts: [ BankContext ]
