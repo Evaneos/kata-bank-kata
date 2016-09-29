@@ -1,3 +1,4 @@
+import formatOperationStatement from './formatOperationStatement';
 export default class {
     operations = [];
 
@@ -14,4 +15,9 @@ export default class {
             date: new Date(),
         });
     }
+
+    getStatement() {
+        return formatOperationStatement(this.operations);
+    }
+
 }

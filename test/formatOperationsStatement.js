@@ -29,5 +29,18 @@ describe('formatOperationStatement', function() {
             '13/12/2012 || || 500.00 || -500.00'
         );
     });
+
+    it('should print several deposits and withdrawals', function() {
+        expect(formatOperationStatement([
+            { amount: 500, date: new Date('2012-01-13') },
+            { amount: 1500, date: new Date('2012-12-04') },
+            { amount: -500, date: new Date('2012-12-15') },
+        ])).to.be.equal(
+            'date || credit || debit || balance\n' +
+            '15/12/2012 || || 500.00 || 1500.00\n' +
+            '04/12/2012 || 1500.00 || || 2000.00\n' +
+            '13/01/2012 || 500.00 || || 500.00'
+        );
+    });
 });
 
