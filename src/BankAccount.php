@@ -4,13 +4,37 @@ namespace KataBank;
 
 class BankAccount
 {
-    private $history = [];
+    /**
+     * @var CreditOperation[]
+     */
+    private $history;
 
-    public function addOperation($amount, \DateTimeImmutable $date)
+    /**
+     * @var int
+     */
+    private $initialAmount;
+
+    /**
+     * BankAccount constructor.
+     */
+    public function __construct()
     {
-        $this->history[] = new Operation($amount, $date);
+        $this->initialAmount = 0;
+        $this->history = [];
     }
 
+    /**
+     * @param $amount
+     * @param \DateTimeImmutable $date
+     */
+    public function addOperation($amount, \DateTimeImmutable $date)
+    {
+        $this->history[] = new CreditOperation($amount, $date);
+    }
+
+    /**
+     * @return CreditOperation[]
+     */
     public function getHistory()
     {
         return $this->history;

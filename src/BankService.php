@@ -29,6 +29,6 @@ class BankService
 
     public function getStatement()
     {
-        
+
     }
 }

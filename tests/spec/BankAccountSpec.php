@@ -3,7 +3,7 @@
 namespace spec\KataBank;
 
 use KataBank\BankAccount;
-use KataBank\Operation;
+use KataBank\CreditOperation;
 use PhpSpec\ObjectBehavior;
 
 class BankAccountSpec extends ObjectBehavior
@@ -31,7 +31,7 @@ class BankAccountSpec extends ObjectBehavior
     private function then_it_should_have_this_operation_in_history($amount, $date)
     {
         $this->getHistory()->shouldBeLike([
-            new Operation($amount, \DateTimeImmutable::createFromFormat('Y-m-d', $date))
+            new CreditOperation($amount, \DateTimeImmutable::createFromFormat('Y-m-d', $date))
         ]);
     }
 }
