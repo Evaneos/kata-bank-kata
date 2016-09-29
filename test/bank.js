@@ -2,11 +2,13 @@ import chai, { expect } from 'chai';
 import chaiDatetime from 'chai-datetime';
 chai.use(chaiDatetime);
 import BankAccount from '../bank';
+import tk from 'timekeeper';
 
 describe('bankAccount', function() {
     let bankAccount;
     beforeEach(() => {
         bankAccount = new BankAccount();
+        tk.reset(); // Reset
     });
     describe('#deposit', () => {
         it('should not have any operation at the beginning', () => {
@@ -26,10 +28,9 @@ describe('bankAccount', function() {
             });
         });
         it('should save the date of the deposit', function() {
-            bankAccount.deposit('1000');
-            expect(bankAccount.operations).to.have.lengthOf(1);
             const dateNow = new Date('2012-10-01');
             tk.freeze(dateNow);
+            bankAccount.deposit('1000');
             expect(bankAccount.operations[0].date).to.equalTime(dateNow)
         });
     })
