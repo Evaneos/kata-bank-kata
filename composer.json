@@ -1,0 +1,19 @@
+{
+    "name": "fabien/kata-bank-kata",
+    "description": "Kata with Arolla pair programing with Yoan",
+    "authors": [
+        {
+            "name": "Fabien Huitelec",
+            "email": "fabien@huitelec.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kata\\Bank\\": "src/",
+            "Kata\\Bank\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^4.8"
+    }
+}
