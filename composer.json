@@ -1,0 +1,13 @@
+{
+    "name": "quentin/kata-bank-kata",
+    "require-dev": {
+        "phpspec/phpspec": "^3.1"
+    },
+    "authors": [
+        {
+            "name": "Quentin",
+            "email": "quentin.pautrat@gmail.com"
+        }
+    ],
+    "require": {}
+}
