@@ -1,0 +1,4 @@
+suites:
+    kata:
+        namespace: Bank
+        psr4_prefix: Bank
